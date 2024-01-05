@@ -1,0 +1,10 @@
+theme = "metroid"
+
+[editor]
+shell = ["nu", "-c"]
+line-number = "relative"
+[editor.statusline]
+right = ["diagnostics", "selections", "register", "position", "position-percentage", "total-line-numbers", "file-encoding"]
+
+[keys.insert]
+j = {k = "normal_mode"}

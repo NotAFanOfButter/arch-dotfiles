@@ -1,0 +1,12 @@
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+[[language]]
+name = "nu"
+file-types = ["nu"]
+comment-token = '#'
+language-servers = ["nu --lsp"]
+# [[language]]
+# name = "conf"
+# file-types = ["conf"]
+# comment-token = '#'

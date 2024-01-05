@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+export SCRIPTPATH="$( cd "$(dirname "$0")"; pwd -P )"
+
+# Down the last running theme
+if [ -f "/tmp/leftwm-theme-down" ]; then
+    /tmp/leftwm-theme-down
+    rm /tmp/leftwm-theme-down
+fi
+ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
+
+# set theme.ron config
+leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
+
+# wallpaper
+feh --bg-fill "${SCRIPTPATH}/bright.jpg" -B white
+
+# wezterm
+ln -s "${SCRIPTPATH}/theme.lua" ~/.config/wezterm/theme.lua
+
+# helix
+ln -s "${SCRIPTPATH}/helix/config.toml" ~/.config/helix/config.toml
+ln -s "${SCRIPTPATH}/helix/theme.toml" ~/.config/helix/themes/metroid.toml
+
+# lemonbar
+(cd ${SCRIPTPATH}/lemonbar; nu "./lemonbar.nu")

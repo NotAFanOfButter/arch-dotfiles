@@ -1,0 +1,18 @@
+{% assign focused_open = "%{F#c83933}%{B#89fcff}" %}
+{% assign busy_open = "%{R}" %}
+{% assign closed = "%{F-}%{B-}" %}
+
+{% comment %} default colours
+%{B#0e0e26}
+%{F#3dde76}
+{% endcomment %}
+
+{% for tag in workspace.tags %}
+	{% if tag.focused %}
+		{{ focused_open }}
+	{% elsif tag.busy %}
+		{{ busy_open }}
+	{% endif %}
+		  {{ tag.index | plus: 1 }}  
+		{{ closed }}
+{% endfor %}

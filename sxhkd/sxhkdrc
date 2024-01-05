@@ -1,0 +1,2 @@
+{_,shift} + XF86MonBrightness{Up,Down}
+	xbacklight {-inc 10, -set 100, -dec 10, -set 10}
