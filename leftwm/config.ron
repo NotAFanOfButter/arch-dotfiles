@@ -46,7 +46,8 @@
     window_rules: [],
     disable_current_tag_swap: true,
     disable_tile_drag: false,
-    focus_behaviour: ClickTo,
+    focus_behaviour: Driven,
+    // sloppy_mouse_follows_focus: true,
     focus_new_windows: true,
     keybind: [
 	(command: Execute, value: "firefox --private-window", modifier: ["modkey"], key: "b"),
