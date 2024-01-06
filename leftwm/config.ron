@@ -50,8 +50,9 @@
     // sloppy_mouse_follows_focus: true,
     focus_new_windows: true,
     keybind: [
-	(command: Execute, value: "firefox --private-window", modifier: ["modkey"], key: "b"),
-        // (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "p"),
+    	(command: Execute, value: "firefox --private-window", modifier: ["modkey"], key: "b"),
+    	(command: Execute, value: "firefox", modifier: ["modkey", "Shift"], key: "b"),
+//      (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "p"),
         (command: Execute, value: "wezterm", modifier: ["modkey"], key: "Return"),
         (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
