@@ -34,7 +34,7 @@ function module.apply_to_config (config)
 			"#2e5857",
 			"#ffb3fe",
 			"#89fcff",
-			"#49283b",
+			"#8dd1e6",
 		}
 
 	}
