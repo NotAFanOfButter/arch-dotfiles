@@ -35,7 +35,7 @@
 //        "RightWiderLeftStack",
 //        "LeftWiderRightStack",
     ],
-    layout_mode: Workspace,
+    layout_mode: Tag,
     insert_behavior: Bottom,
     scratchpad: [
 	( name: "wezterm",
@@ -91,6 +91,6 @@
         (command: MoveToTag, value: "6", modifier: ["modkey", "Shift"], key: "6"),
     ],
     workspaces: [
-        ( output: "eDP1", x:0,y:0,width:1920,height:1080),
+        ( output: "eDP1", x:0,y:0,width:1920,height:1080 ),
     ],
 )
