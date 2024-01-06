@@ -52,6 +52,7 @@ mode = 'normal'
 [keybindings.toggle_article_language_selection]
 key = 'f3'
 mode = 'normal'
+
 [settings.toc]
 position = 'Right'
 title = 'Default'
