@@ -24,7 +24,7 @@ function module.apply_to_config (config)
 			"#4f6e82",
 			"#92878d",
 			"#fbfdfc",
-			"#8c613e",
+			"#fdffb1",
 		},
 		brights = {
 			"#82b1a9",
