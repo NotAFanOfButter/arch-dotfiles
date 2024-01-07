@@ -765,6 +765,7 @@ $env.config = {
 $env.EDITOR = helix
 $env.VISUAL = helix
 $env.FZF_DEFAULT_COMMAND = 'find .'
+$env.SCCACHE_CACHE_SIZE = "1G"
 
 # custom
 alias paru = paru --limit 10 --sudo=doas
