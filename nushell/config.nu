@@ -770,7 +770,6 @@ $env.SCCACHE_CACHE_SIZE = "1G"
 # custom
 alias quit = exit
 alias paru = paru --limit 10 --sudo=doas
-alias hx = helix
 alias neofetch = with-env {
     SHELL: /usr/bin/nu,
     FONT: (wezterm ls-fonts | split row "\n" | get 4 | split chars | drop 2 | skip 3 | str join ""),
