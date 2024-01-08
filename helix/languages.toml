@@ -4,6 +4,9 @@ formatter = { command = "taplo", args = ["fmt", "-"] }
 [[language]]
 name = "rust"
 auto-format = false
+[language-server.rust-analyzer.config]
+cargo.buildScripts.enable = true
+procMacro.enable = true
 [[language]]
 name = "nu"
 file-types = ["nu"]
