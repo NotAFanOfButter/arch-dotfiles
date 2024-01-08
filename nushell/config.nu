@@ -768,6 +768,7 @@ $env.FZF_DEFAULT_COMMAND = 'find .'
 $env.SCCACHE_CACHE_SIZE = "1G"
 
 # custom
+alias quit = exit
 alias paru = paru --limit 10 --sudo=doas
 alias hx = helix
 alias neofetch = with-env {
@@ -779,6 +780,9 @@ alias neofetch = with-env {
 alias add_display = xrandr --output "eDP1" --auto --primary --output
 def remove_display [disp: string] {
     run-external "xrandr" "--output" "eDP1" "--auto" "--primary" "--output" $disp "--off"
+}
+def switch_to_display  [disp: string] {
+    add_display $disp; remove_display "eDP1"
 }
 # startup
 neofetch

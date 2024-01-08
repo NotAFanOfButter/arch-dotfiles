@@ -8,6 +8,14 @@ end
 config.default_prog = { "/usr/bin/nu" }
 config.hide_tab_bar_if_only_one_tab = true
 
+config.keys = {
+	{
+		key = "Enter",
+		mods = "SUPER|SHIFT",
+		action = wezterm.action.SpawnWindow,
+	}
+}
+
 theme.apply_to_config(config)
 
 return config
