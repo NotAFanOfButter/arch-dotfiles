@@ -18,7 +18,6 @@ feh --bg-fill "${SCRIPTPATH}/bright.jpg" -B white
 ln -s "${SCRIPTPATH}/theme.lua" ~/.config/wezterm/theme.lua
 
 # helix
-ln -s "${SCRIPTPATH}/helix/config.toml" ~/.config/helix/config.toml
 ln -s "${SCRIPTPATH}/helix/theme.toml" ~/.config/helix/themes/metroid.toml
 
 # lemonbar
