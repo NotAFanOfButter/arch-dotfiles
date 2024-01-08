@@ -79,7 +79,7 @@ base07 = "#fbfdfc" # Light Background (Not often used)
 base08 = "#3dde76" # Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
 # mauve = purple
 base09 = "#92878d" # Integers, Boolean, Constants, XML Attributes, Markup Link Url
-# yelllow
+# yellow
 base0A = "#f1a780" # Classes, Markup Bold, Search Text Background
 # cyan = light_cyan
 base0B = "#89fcff" # Strings, Inherited Class, Markup Code, Diff Inserted
@@ -87,7 +87,7 @@ base0B = "#89fcff" # Strings, Inherited Class, Markup Code, Diff Inserted
 base0C = "#b5eace" # Support, Regular Expressions, Escape Characters, Markup Quotes
 # light_red
 base0D = "#eb544d" # Functions, Methods, Attribute IDs, Headings
-# yellow
-base0E = "#f1a780" # Keywords, Storage, Selector, Markup Italic, Diff Changed
 # light_gray
+base0E = "#8dd1e6" # Keywords, Storage, Selector, Markup Italic, Diff Changed
+# old light_gray
 base0F = "#49283b" # Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
