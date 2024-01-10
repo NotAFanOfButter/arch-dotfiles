@@ -787,6 +787,7 @@ $env.EDITOR = helix
 $env.VISUAL = helix
 $env.FZF_DEFAULT_COMMAND = 'find .'
 $env.SCCACHE_CACHE_SIZE = "1G"
+$env.HELIX_RUNTIME = /usr/lib/helix/runtime
 
 # custom
 alias quit = exit
