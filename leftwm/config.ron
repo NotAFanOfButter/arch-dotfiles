@@ -57,7 +57,7 @@
         (command: Execute, value: "scrot -F '/home/huginn/shot.png'", modifier: ["modkey", "Shift"], key: "s"),
         (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
-        (command: Execute, value: "pkill leftwm", modifier: ["modkey"], key: "x"),
+        (command: Execute, value: "pkill leftwm", modifier: ["modkey"], key: "Escape"),
         //(command: Execute, value: "slock", modifier: ["modkey", "Control"], key: "l"),
         //(command: MoveToLastWorkspace, value: "", modifier: ["modkey", "Shift"], key: "w"),
         (command: SwapTags, value: "", modifier: ["modkey"], key: "w"),
