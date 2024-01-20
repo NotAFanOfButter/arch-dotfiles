@@ -797,7 +797,7 @@ alias neofetch = with-env {
     FONT: (wezterm ls-fonts | split row "\n" | get 4 | split chars | drop 2 | skip 3 | str join ""),
     LEFTWM_THEME: (uu-realpath ~/.config/leftwm/themes/current/ | path parse | get stem | split chars | str join)
     } {neofetch}
-# script commands
+# display commands
 alias add_display = xrandr --output "eDP1" --auto --primary --output
 def remove_display_and_sound [disp: string] {
     run-external "xrandr" "--output" "eDP1" "--auto" "--primary" "--output" $disp "--off"
@@ -806,6 +806,31 @@ def remove_display_and_sound [disp: string] {
 def switch_to_tv [] {
     add_display "HDMI1" --mode 1680x1050 --same-as eDP1 --scale 1.14x1.03; xrandr --output "eDP1" --off
     pactl set-card-profile 42 output:hdmi-stereo+input:analog-stereo
+}
+# nyaa script
+def nyaa-query [query: string] {
+    "" | save -f ~/tmp/nyaa
+    $query | str downcase | str replace " " "+" | prepend "https://nyaa.si/?f=0&c=1_2&page=rss&q=" | str join "" |
+    http get $in | get content.0.content | filter {|i| $i.tag == "item"} |
+    each {|it|
+        $it.content.content |
+        { title: ($in.0.content.0 | str substring 0..80), size: ($in.10.content.0 | into filesize),
+            sl: ("+" + $in.4.content.0 + "-" + $in.5.content.0),
+            date: ($in.3.content.0 | into datetime | format date "%d/%m/%Y"),
+            link: $in.1.content.0 }
+    } | sort-by size |
+    each {|it|
+        $it.link + "\n" | save --append ~/tmp/nyaa;
+        { title: $it.title, size: $it.size, seed-leech: $it.sl, date: $it.date }
+    }
+}
+def nyaa-fetch [num: int, --output (-o): path] {
+    bat ~/tmp/nyaa | split row "\n" | drop 1 | get $num |
+    if ($output | describe) != nothing {
+        aria2c $in -d $output
+    } else {
+        aria2c $in
+    }
 }
 # startup
 neofetch
