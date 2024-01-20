@@ -5,6 +5,9 @@ shell = ["nu", "-c"]
 line-number = "relative"
 [editor.statusline]
 right = ["diagnostics", "selections", "register", "position", "position-percentage", "total-line-numbers", "file-encoding"]
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
 
 [keys.insert]
 j = {k = "normal_mode"}
