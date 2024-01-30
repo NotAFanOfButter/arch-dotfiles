@@ -13,6 +13,11 @@ config.keys = {
 		key = "Enter",
 		mods = "SUPER|SHIFT",
 		action = wezterm.action.SpawnWindow,
+	},
+	{
+		key = "t",
+		mods = "SUPER",
+		action = wezterm.action.Nop,
 	}
 }
 

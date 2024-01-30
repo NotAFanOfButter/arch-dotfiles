@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 pueue kill -g bar; pueue start -g bar
+pkill picom
 
 leftwm-command "UnloadTheme"

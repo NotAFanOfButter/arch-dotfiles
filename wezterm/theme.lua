@@ -1,1 +1,1 @@
-/home/huginn/.config/leftwm/themes/metroid/theme.lua
+/home/huginn/.config/leftwm/themes/zelda/theme.lua

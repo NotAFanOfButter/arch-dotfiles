@@ -15,7 +15,7 @@ def disk [] {
 	$in | get disks.0 | 1.0 - ($in.free / $in.total) | percent_format
 }
 def clock [] {
-	let datetime = date now | format date '(%d) %R'
+	let datetime = date now | format date '[%d] %R'
 	$" ($datetime)"
 }
 

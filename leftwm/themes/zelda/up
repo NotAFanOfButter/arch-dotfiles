@@ -12,7 +12,10 @@ ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
 # wallpaper
-feh --bg-fill "${SCRIPTPATH}/bright.jpg" -B white
+feh --bg-fill "${SCRIPTPATH}/soft.jpg" -B white
+
+# picom
+picom --config "${SCRIPTPATH}/picom.conf" &
 
 # wezterm
 if [ -f ~/.config/wezterm/theme.lua ]; then

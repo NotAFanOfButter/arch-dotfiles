@@ -1,4 +1,4 @@
-theme = "metroid"
+theme = "leftwm"
 
 [editor]
 shell = ["nu", "-c"]

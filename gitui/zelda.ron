@@ -1,0 +1,7 @@
+#![enable(implicit_some)]
+(
+    selection_bg: Gray,
+    selection_fg: Black,
+    cmdbar_bg: Gray,
+    command_fg: Reset,
+)

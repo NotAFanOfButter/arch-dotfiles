@@ -787,16 +787,20 @@ $env.EDITOR = helix
 $env.VISUAL = helix
 $env.FZF_DEFAULT_COMMAND = 'find .'
 $env.SCCACHE_CACHE_SIZE = "1G"
-$env.HELIX_RUNTIME = /usr/lib/helix/runtime
+$env.HELIX_RUNTIME = /usr/lib/helix/runtime;
+
+# theme changer
+def cycle_theme [] {
+    let current = ( uu-realpath ~/.config/leftwm/themes/current | str trim | path parse | get stem )
+    let list = ( ls ~/.config/leftwm/themes | get name | where ($it | str contains "current" | not $in) | enumerate )
+    let next_index = ( $list | find $current | $in.index.0 + 1 | $in mod ($list | length) )
+    uu-rm ~/.config/leftwm/themes/current; uu-ln -s ($list | get $next_index | get item) ~/.config/leftwm/themes/current
+}
 
 # custom
 alias quit = exit
 alias paru = paru --limit 10 --sudo=doas
-alias neofetch = with-env {
-    SHELL: /usr/bin/nu,
-    FONT: (wezterm ls-fonts | split row "\n" | get 4 | split chars | drop 2 | skip 3 | str join ""),
-    LEFTWM_THEME: (uu-realpath ~/.config/leftwm/themes/current/ | path parse | get stem | split chars | str join)
-    } {neofetch}
+
 # display commands
 alias add_display = xrandr --output "eDP1" --auto --primary --output
 def remove_display_and_sound [disp: string] {
@@ -833,4 +837,4 @@ def nyaa-fetch [num: int, --output (-o): path] {
     }
 }
 # startup
-neofetch
+source ~/.config/nushell/startup.nu

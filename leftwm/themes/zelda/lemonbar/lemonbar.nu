@@ -15,4 +15,4 @@ pueue clean
 	}
 )')
 (pueue add -g bar -- 'nu ./bar_stats.nu')
-(pueue add -g bar -- 'nu ./read.nu | ./lemonbar -p -f "3270 nerd font mono:weight=bold:size=18" -F "#3dde76" -B "#0e0e26"')
+(pueue add -g bar -- 'nu ./read.nu | ./lemonbar -p -f "monofur nerd font:weight=bold:size=18" -F "#91db6d" -B "#30504b"')
