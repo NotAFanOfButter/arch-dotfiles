@@ -15,6 +15,8 @@ leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 feh --bg-fill "${SCRIPTPATH}/soft.jpg" -B white
 
 # picom
+pkill picom
+sleep 0.2
 picom --config "${SCRIPTPATH}/picom.conf" &
 
 # wezterm
