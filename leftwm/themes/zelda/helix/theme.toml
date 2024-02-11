@@ -80,10 +80,10 @@ base07 = "#7f9b73" # Light Background (Never used)
 base08 = "#fcce5e" # Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
 # mauve = purple -> cyan
 base09 = "#4ecac6" # Integers, Boolean, Constants, XML Attributes, Markup Link Url
-# yellow -> white bold
-base0A = "#a39d5d" # Classes, Markup Bold, Search Text Background
-# cyan = light_cyan -> magenta bold
-base0B = "#f96d98" # Strings, Inherited Class, Markup Code, Diff Inserted
+# yellow -> magenta bold
+base0A = "#f96d98" # Classes, Markup Bold, Search Text Background
+# cyan = light_cyan -> magenta
+base0B = "#b3789f" # Strings, Inherited Class, Markup Code, Diff Inserted
 # green -> red
 base0C = "#f46221" # Support, Regular Expressions, Escape Characters, Markup Quotes
 # light_red -> green bold

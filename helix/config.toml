@@ -3,6 +3,7 @@ theme = "leftwm"
 [editor]
 shell = ["nu", "-c"]
 line-number = "relative"
+gutters = ["line-numbers", "spacer", "diff"]
 [editor.statusline]
 right = ["diagnostics", "selections", "register", "position", "position-percentage", "total-line-numbers", "file-encoding"]
 [editor.lsp]
