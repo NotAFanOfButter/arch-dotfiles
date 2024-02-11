@@ -802,13 +802,13 @@ alias quit = exit
 alias paru = paru --limit 10 --sudo=doas
 
 # display commands
-alias add_display = xrandr --output "eDP1" --auto --primary --output
+alias add_display = xrandr --output "eDP-1" --auto --primary --output
 def remove_display_and_sound [disp: string] {
-    run-external "xrandr" "--output" "eDP1" "--auto" "--primary" "--output" $disp "--off"
+    run-external "xrandr" "--output" "eDP-1" "--auto" "--primary" "--output" $disp "--off"
     pactl set-card-profile 42 output:analog-stereo+input:analog-stereo
 }
 def switch_to_tv [] {
-    add_display "HDMI1" --mode 1680x1050 --same-as eDP1 --scale 1.14x1.03; xrandr --output "eDP1" --off
+    add_display "HDMI-1" --mode 1680x1050 --same-as eDP-1 --scale 1.14x1.03; xrandr --output "eDP-1" --off
     pactl set-card-profile 42 output:hdmi-stereo+input:analog-stereo
 }
 # nyaa script
