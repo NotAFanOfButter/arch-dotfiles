@@ -23,7 +23,7 @@ def clock [] {
 	$"($open_white)\(($closer)" + $day + $"($open_white)\)($closer) " + $time
 }
 
-def stat_format [stats: record<list<string>>] {
+def stat_format [stats: record<disk: list<string>, cpu: list<string>, ram: list<string>, bat: list<string>>] {
 	let open = {
 		red: "f46221", fg: "f7f6cb",
 		yellow: "fcce5e", blue: "5eb5fc",

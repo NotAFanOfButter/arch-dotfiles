@@ -19,7 +19,7 @@ def clock [] {
 	$" ($datetime)"
 }
 
-def stat_format [stats: list<list<string>>] {
+def stat_format [stats: record<disk: list<string>, cpu: list<string>, ram: list<string>, bat: list<string>>] {
 	let red_open = "%{F#eb544d}"
 	let pink_open = "%{F#ffb4fe}"
 	let close = "%{F-}"
