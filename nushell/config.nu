@@ -837,6 +837,11 @@ def nyaa-fetch [num: int, --output (-o): path] {
         aria2c $in
     }
 }
+# pueue more easier
+def bg [...app: string] {
+    pueue add -g apps $app;
+    exit
+}
 # carapace (completion)
 source ~/.cache/carapace/init.nu
 # startup
