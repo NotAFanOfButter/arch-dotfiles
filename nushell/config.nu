@@ -800,6 +800,7 @@ def cycle_theme [] {
 # custom
 alias quit = exit
 alias paru = paru --limit 10 --sudo=doas
+alias bpypy = ~/.local/share/pypy/bin/pypy3 -m bpython
 
 # display commands
 alias add_display = xrandr --output "eDP-1" --auto --primary --output
