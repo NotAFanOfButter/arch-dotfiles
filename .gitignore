@@ -2,3 +2,17 @@ deluge
 nushell/history.txt
 pulse/cookie
 dconf/
+.local/share/Sioyek/last_document_path.txt
+.local/share/Sioyek/local.db
+.local/share/Sioyek/shared.db
+.local/share/Sioyek/test.db
+.local/share/Sioyek/tutorial.pdf
+QtProject.conf
+cef_user_data
+dconf
+dconf/user
+gtk-2.0
+sioyek
+user-dirs.dirs
+user-dirs.locale
+.local/share/Sioyek/auto.config
