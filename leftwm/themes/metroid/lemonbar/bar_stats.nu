@@ -28,6 +28,6 @@ def stat_format [stats: list<list<string>>] {
 
 while true {
 	let stats_list = [["SSD", (disk)], ["CPU", (cpu)], ["RAM", (ram)], ["BATT", (bat)]]
-	stat_format $stats_list | $in + (clock) | "S:" + $in | save -f ./bar_info.fifo
+	stat_format $stats_list | $in + (clock) | "S:" + $in + ";;;" | save -f ./bar_info.fifo
 	sleep 1sec
 }
