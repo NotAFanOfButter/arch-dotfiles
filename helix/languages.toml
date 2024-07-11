@@ -28,6 +28,15 @@ forwardSearch.args = [
   "%p",
 ]
 
+[language-server.ccls]
+command = "ccls"
+args = ["--log-file=ccls.log", "-v", "2"]
+
+[[language]]
+name = "c"
+language-servers = ["ccls"]
+roots = [".ccls"]
+
 [[language]]
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
