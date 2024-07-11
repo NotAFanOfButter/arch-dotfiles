@@ -42,7 +42,9 @@
 	  x: 860, y: 390, height: 300, width: 200
 	),
     ],
-    window_rules: [],
+    window_rules: [
+        ( window_title: "Picture-in-Picture", spawn_floating: true, spawn_as_type: Normal ),       
+    ],
     disable_current_tag_swap: true,
     disable_tile_drag: false,
     focus_behaviour: Sloppy,
@@ -93,6 +95,6 @@
         (command: MoveToTag, value: "6", modifier: ["modkey", "Shift"], key: "6"),
     ],
     workspaces: [
-        ( output: "eDP1", x:0,y:0,width:1920,height:1080 ),
+        // ( output: "eDP-1", x:0,y:0,width:1920,height:1080 ),
     ],
 )
