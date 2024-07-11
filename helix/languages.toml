@@ -4,6 +4,30 @@ procMacro.enable = true
 check.command = "clippy"
 completion.callable.snippets = "add_parantheses"
 
+[language-server.texlab]
+command = "texlab"
+[language-server.texlab.config.texlab]
+build.onSave = true
+build.forwardSearchAfter = true
+build.executable = "tectonic"
+build.args = [
+  "-X",
+  "build",
+  "--keep-logs",
+  "--keep-intermediates",
+]
+forwardSearch.executable = "sioyek"
+forwardSearch.args = [
+  "--reuse-window",
+  "--execute-command",
+  "toggle_synctex",
+  "--forward-search-file",
+  "%f",
+  "--forward-search-line",
+  "%l",
+  "%p",
+]
+
 [[language]]
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
@@ -19,3 +43,7 @@ language-servers = ["nu --lsp"]
 # name = "conf"
 # file-types = ["conf"]
 # comment-token = '#'
+
+[[language]]
+name = "latex"
+language-servers = [{name = "texlab"}]
