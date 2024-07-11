@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 pueue kill -g bar; pueue start -g bar
 
+nu ~/.config/cava/restore.nu
+
 leftwm-command "UnloadTheme"

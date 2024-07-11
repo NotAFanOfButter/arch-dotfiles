@@ -37,5 +37,8 @@ if [ -f ~/.config/nushell/startup.nu ]; then
 fi
 ln -s "${SCRIPTPATH}/startup.nu" ~/.config/nushell/startup.nu
 
+# cava
+${SCRIPTPATH}/cava/cava.nu
+
 # lemonbar
 pueue kill -g bar; pueue start -g bar; (cd ${SCRIPTPATH}/lemonbar; nu "./lemonbar.nu")

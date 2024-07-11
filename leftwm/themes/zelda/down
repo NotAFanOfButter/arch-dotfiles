@@ -2,4 +2,6 @@
 pueue kill -g bar; pueue start -g bar
 pkill picom
 
+nu ~/.config/cava/restore.nu
+
 leftwm-command "UnloadTheme"
