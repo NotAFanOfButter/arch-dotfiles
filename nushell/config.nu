@@ -797,7 +797,7 @@ $env.config.keybindings = ($env.config.keybindings | append {
     mode: vi_insert
     event: {
         send: ExecuteHostCommand
-        cmd: "commandline (
+        cmd: "commandline edit -r (
             history |
             each { |it| $it.command } |
             uniq |
@@ -807,6 +807,24 @@ $env.config.keybindings = ($env.config.keybindings | append {
             decode utf-8 |
             str trim
         )"
+    }
+} | append {
+    name: bg_shift
+    modifier: alt
+    keycode: char_b
+    mode: vi_insert
+    event: {
+        send: ExecuteHostCommand
+        cmd: "bg_switch (commandline)"
+    }
+} | append {
+    name: bg_app
+    modifier: control
+    keycode: char_b
+    mode: vi_insert
+    event: {
+        send: ExecuteHostCommand
+        cmd: "bg (commandline); commandline edit ''"
     }
 })
 # environment variables (PATH in `env`)
@@ -865,10 +883,14 @@ def nyaa-fetch [num: int, --output (-o): path] {
     }
 }
 # pueue more easier
-def bg [...app: string] {
-    pueue add -g apps $app;
+def bg_switch [...app: string] {
+    pueue add -g apps ...$app e> ~/tmp/bg_err | null;
     exit
 }
+def bg [...app: string] {
+    pueue add -g apps ...$app e> ~/tmp/bg_err | null
+}
+
 # carapace (completion)
 source ~/.cache/carapace/init.nu
 # startup
