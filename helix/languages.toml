@@ -40,14 +40,16 @@ roots = [".ccls"]
 [[language]]
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
+
 [[language]]
 name = "rust"
-auto-format = false
+
 [[language]]
 name = "nu"
 file-types = ["nu"]
 comment-token = '#'
 language-servers = ["nu --lsp"]
+
 # [[language]]
 # name = "conf"
 # file-types = ["conf"]
