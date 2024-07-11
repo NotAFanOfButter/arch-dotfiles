@@ -1,0 +1,14 @@
+{% assign focused_open = "%{F-}%{B#696D86}" %}
+{% assign busy_open = "%{F-}%{B#43465A}" %}
+{% assign closed = "%{F-}%{B-}" %}
+{% assign letters = "Ⅰ.Ⅱ.Ⅲ.Ⅳ.Ⅴ" | split: '.' %}
+
+{% for tag in workspace.tags %}
+	{% if tag.focused %}
+		{{ focused_open }}
+	{% elsif tag.busy %}
+		{{ busy_open }}
+	{% endif %}
+		  {{ letters[tag.index] }}  
+		{{ closed }}
+{% endfor %}

@@ -1,0 +1,21 @@
+{% assign focused_open = "%{F#1a0c0c}%{B#ec8737}" %}
+{% assign busy_open = "%{F#fcf5ad}%{B#51100c}" %}
+{% assign closed = "%{F-}%{B-}" %}
+{% assign letters = "ベ.ル.セ.ル.ク." | split: '.' %}
+{% assign font_open = "%{T-}" %}
+{% assign font_close = "%{T-}" %}
+
+{% comment %} default colours
+%{B#30504b}
+%{F#91db6d}
+{% endcomment %}
+
+{% for tag in workspace.tags %}
+	{% if tag.focused %}
+		{{ focused_open }}
+	{% elsif tag.busy %}
+		{{ busy_open }}
+	{% endif %}
+		  {{ font_open }} {{ letters[tag.index] }} {{ font_close }}  
+		{{ closed }}
+{% endfor %}
