@@ -20,6 +20,7 @@ config.keys = {
 		action = wezterm.action.Nop,
 	}
 }
+config.front_end = "WebGpu"
 
 theme.apply_to_config(config)
 
