@@ -1,6 +1,6 @@
 # Author: RayGervais <raygervais@hotmail.ca>
 
-"ui.background" = { bg = "base00" }
+# "ui.background" = { bg = "base00" }
 "ui.virtual.whitespace" = "base03"
 "ui.virtual.inlay-hint" = "base04"
 "ui.menu" = { fg = "base05", bg = "base01" }
@@ -42,7 +42,7 @@
 "markup.link.url" = { fg = "base09", modifiers = ["underlined"] }
 "markup.link.text" = "base08"
 "markup.quote" = "base0C"
-"markup.raw" = "base0B"
+"markup.raw" = "base0F"
 
 "diff.plus" = "base0D"
 "diff.delta" = "base08"

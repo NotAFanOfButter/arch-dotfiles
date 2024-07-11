@@ -1,6 +1,6 @@
 # Author: RayGervais <raygervais@hotmail.ca>
 
-"ui.background" = { bg = "base00" }
+# "ui.background" = { bg = "base00" }
 "ui.virtual.whitespace" = "base03"
 "ui.virtual.inlay-hint" = "base03"
 "ui.menu" = { fg = "base05", bg = "base01" }
