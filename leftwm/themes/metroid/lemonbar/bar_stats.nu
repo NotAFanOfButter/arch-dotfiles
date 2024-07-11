@@ -3,23 +3,23 @@ def percent_format [] {
 }
 
 def ram [] {
-	$in | get mem | $in.used / $in.total | percent_format
+	sys mem | $in.used / $in.total | percent_format
 }
 def bat [] {
 	cat /sys/class/power_supply/BAT0/capacity | into int | $in / 100.0 | percent_format
 }
 def cpu [] {
-	$in | get cpu | get cpu_usage | reduce {|num, acc| $num + $acc} | $in / 800.0 | percent_format
+	sys cpu | get cpu_usage | reduce {|num, acc| $num + $acc} | $in / 800.0 | percent_format
 }
 def disk [] {
-	$in | get disks.0 | 1.0 - ($in.free / $in.total) | percent_format
+	sys disks | get 0 | 1.0 - ($in.free / $in.total) | percent_format
 }
 def clock [] {
 	let datetime = date now | format date '[%d] %R'
 	$" ($datetime)"
 }
 
-def stat_format [stats: record<disk: list<string>, cpu: list<string>, ram: list<string>, bat: list<string>>] {
+def stat_format [stats: list<list<string>>] {
 	let red_open = "%{F#eb544d}"
 	let pink_open = "%{F#ffb4fe}"
 	let close = "%{F-}"
@@ -27,7 +27,7 @@ def stat_format [stats: record<disk: list<string>, cpu: list<string>, ram: list<
 }
 
 while true {
-	let stats_list = sys | [["SSD", ($in | disk)], ["CPU", ($in | cpu)], ["RAM", ($in | ram)], ["BATT", (bat)]]
+	let stats_list = [["SSD", (disk)], ["CPU", (cpu)], ["RAM", (ram)], ["BATT", (bat)]]
 	stat_format $stats_list | $in + (clock) | "S:" + $in | save -f ./bar_info.fifo
 	sleep 1sec
 }
