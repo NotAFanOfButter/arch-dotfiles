@@ -844,7 +844,8 @@ def cycle_theme [] {
 
 # custom
 alias quit = exit
-alias paru = paru --limit 10 --sudo=doas
+alias ":q" = exit
+alias ":wq" = exit
 alias bpypy = ~/.local/share/pypy/bin/pypy3 -m bpython
 
 # display commands
@@ -891,6 +892,10 @@ def bg [...app: string] {
     pueue add -g apps ...$app e> ~/tmp/bg_err | null
 }
 
+def --env mkcd [dir: string]: nothing -> nothing {
+    mkdir $dir
+    cd $dir
+}
 # carapace (completion)
 source ~/.cache/carapace/init.nu
 # startup
