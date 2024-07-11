@@ -865,24 +865,30 @@ def nyaa-query [query: string] {
     http get $in | get content.0.content | filter {|i| $i.tag == "item"} |
     each {|it|
         $it.content.content |
-        { title: ($in.0.content.0 | str substring 0..80), size: ($in.10.content.0 | into filesize),
+        { title: ($in.0.content.0), size: ($in.10.content.0 | into filesize),
             sl: ("+" + $in.4.content.0 + "-" + $in.5.content.0),
             date: ($in.3.content.0 | into datetime | format date "%d/%m/%Y"),
             link: $in.1.content.0 }
     } | sort-by size |
     each {|it|
-        $it.link + "\n" | save --append ~/tmp/nyaa;
-        { title: $it.title, size: $it.size, seed-leech: $it.sl, date: $it.date }
+        let title = $it.title | ^rg '\[(.+?)\]\s(.+?)\s(\[.*)' -or '$2 <$1> $3' | str replace -r '\s\[[A-Z0-9]+\]' '';
+        $it.link + "|" + $it.title + "|" + $title + "\n" | save --append ~/tmp/nyaa;
+        { title: ($it.title | str substring 0..80), size: $it.size, seed-leech: $it.sl, date: $it.date }
     }
 }
 def nyaa-fetch [num: int, --output (-o): path] {
-    bat ~/tmp/nyaa | split row "\n" | drop 1 | get $num |
+    let chosen = bat ~/tmp/nyaa | str trim | split row "\n" | get $num | parse "{link}|{filename}|{title}" | get 0;
     if ($output | describe) != nothing {
-        aria2c $in -d $output
+        aria2c -d $output $chosen.link --follow-torrent=mem;
+        mv $'($output)/($chosen.filename)' $'($output)/($chosen.title)'
     } else {
-        aria2c $in
+        aria2c $chosen.link --follow-torrent=mem;
+        sleep 1sec;
+        mv $chosen.filename $chosen.title
     }
 }
+alias nq = nyaa-query
+alias nf = nyaa-fetch
 # pueue more easier
 def bg_switch [...app: string] {
     pueue add -g apps ...$app e> ~/tmp/bg_err | null;
