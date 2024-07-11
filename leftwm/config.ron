@@ -9,7 +9,7 @@
 #![enable(implicit_some)]
 (
     modkey: "Mod4",
-    mousekey: "Mod4",
+    mousekey: ["Mod1","Control"],
     tags: [
         "editor",
         "terminal",
@@ -48,7 +48,7 @@
     disable_current_tag_swap: true,
     disable_tile_drag: false,
     focus_behaviour: Sloppy,
-    // sloppy_mouse_follows_focus: true,
+    sloppy_mouse_follows_focus: true,
     focus_new_windows: true,
     keybind: [
     	(command: Execute, value: "firefox --private-window", modifier: ["modkey"], key: "b"),
