@@ -852,11 +852,11 @@ alias bpypy = ~/.local/share/pypy/bin/pypy3 -m bpython
 alias add_display = xrandr --output "eDP-1" --auto --primary --output
 def remove_display_and_sound [disp: string] {
     run-external "xrandr" "--output" "eDP-1" "--auto" "--primary" "--output" $disp "--off"
-    pactl set-card-profile 42 output:analog-stereo+input:analog-stereo
+    pactl set-card-profile "alsa_card.pci-0000_00_1f.3" output:analog-stereo+input:analog-stereo
 }
 def switch_to_tv [] {
     add_display "HDMI-1" --mode 1680x1050 --same-as eDP-1 --scale 1.14x1.03; xrandr --output "eDP-1" --off
-    pactl set-card-profile 42 output:hdmi-stereo+input:analog-stereo
+    pactl set-card-profile "alsa_card.pci-0000_00_1f.3" output:hdmi-stereo+input:analog-stereo
 }
 # nyaa script
 def nyaa-query [query: string] {
