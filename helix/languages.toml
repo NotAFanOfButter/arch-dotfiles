@@ -1,5 +1,7 @@
 [language-server.rust-analyzer.config]
 cargo.buildScripts.enable = true
+cachePriming.enable = false
+cache.warmup = false
 procMacro.enable = true
 check.command = "clippy"
 completion.callable.snippets = "add_parantheses"
